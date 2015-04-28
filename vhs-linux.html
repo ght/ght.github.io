@@ -7,66 +7,145 @@
 body{
 	background-color: #eee;
 	margin: 2em auto;
-	max-width: 35em;
+	max-width: 40em;
 	font-family: sans-serif}
 header, footer{text-align: center}
 a{
-	color: #777;
-	font-size: .8em;
+	color: #35b;
 	text-decoration: none}
-a:hover{background-color: #fcc}
-footer{
-	font-size: .7em;
-	margin-top: .5em}
+header a, dt a{font-size: .8em}
+a:hover{background-color: #fc3}
+h2{border-bottom: 2px solid #35b}
+h2, p{padding: 0 .5em}
 article{
 	border-color: #3b5;
 	border-style: solid;
-	border-width: 2px;
-	border-left-width: 0;
-	border-right-width: 0}
-h2{border-bottom: 2px solid #35b}
-dt{margin: .5em 0 .2em}
+	border-width: 2px 0px}
+dt{
+	font-weight: bold;
+	margin: .5em 0 .2em;
+	border-bottom: 1px dotted #777}
+footer{
+	font-size: .7em;
+	margin-top: .5em}
 @media print{
 	body{background-color: #fff}
-	a{text-decoration: underline}
+	a{color: #444}
 }
 	</style>
 </head><body>
 	<header><h1>Einstieg in die Linux-Welt
 		<a href="https://vhs.bochum.de/index.php?id=115&amp;kathaupt=11&amp;knr=Q54108">(Q54108)</a>
 	</h1></header><article>
-		<h2>Hintergrund &amp; Begriffe</h2>
-		<p>Linux ist ein <em>Kernel</em>, meist ist mit dem Namen jedoch eine Linux&ndash;<em>Distribution</em>, also ein komplettes <em>Betriebssystem</em> gemeint.</p>
+		<h2>Hintergrund</h2>
+		<p><a href="https://de.wikipedia.org/wiki/Linux">Linux</a> ist ein unter der freien Lizenz
+			<a href="https://de.wikipedia.org/wiki/GNU_General_Public_License">GPL</a> stehender
+			<a href="https://de.wikipedia.org/wiki/Open_Source">Open-Source</a>
+			<a href="https://de.wikipedia.org/wiki/Kernel_(Betriebssystem)"><em>Kernel</em></a>, meist ist mit dem Namen jedoch eine
+			<a href="https://de.wikipedia.org/wiki/Linux-Distribution">Linux-<em>Distribution</em></a>, also ein komplettes
+			<a href="https://de.wikipedia.org/wiki/Betriebssystem"><em>Betriebssystem</em></a> gemeint.
+			Einer der Initiatoren des Projekts war
+			<a href="https://de.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a>,
+			der auch heute noch die Weiterentwicklung koordiniert.</p>
+
+		<h2>Benutzeroberfläche</h2>
+		<p>Die grafische Benutzeroberfläche der meisten Linux-Distributionen ist &ndash; von kleinen Unterschieden abgesehen &ndash; der von Windows und MacOS sehr ähnlich.
+			Das generelle Design hängt von der verwendeten
+			<a href="https://de.wikipedia.org/wiki/Arbeitsumgebung#Desktop-Umgebung"><em>Desktop-Umgebung</em></a>
+			ab, Details wie die Farbe der Fensterrahmen und andere Kleinigkeiten lassen sich in der Regel in den Systemeinstellungen anpassen.</p>
+
+		<h2>Distributionswahl</h2>
+		<p>Bei der Entscheidung welche Distribution man installiert, gibt es verschiedene Kriterien. Als Linux-Einsteiger sollte man sich für eine der großen, weit verbreiteten Distributionen entscheiden, wie zum Beispiel
+			<a href="http://www.ubuntu.com/">Ubuntu</a>,
+			<a href="http://linuxmint.com/">Mint</a>,
+			<a href="https://getfedora.org/">Fedora</a> oder
+			<a href="https://www.opensuse.org/de/">openSUSE</a>.
+			Distributionen mit vielen Nutzern sind in der Regel besser praxiserprobt und man findet bei Fragen und Problemen mehr Informationen im Internet.</p>
+
+		<p>Ein anderes Kriterium sind die Systemanforderungen: auf einem alten Computer, oder einem langsamen Netbook bieten sich Distributionen an, die mit weniger &bdquo;Ballast&ldquo; daherkommen, wie beispielsweise
+			<a href="https://wiki.manjaro.org/index.php?title=Startseite">Manjaro</a>,
+			oder zumindest eine Ubuntu-Version mit schlankerer Benutzeroberfläche, wie
+			<a href="http://lubuntu.net/">Lubuntu</a> oder
+			<a href="http://www.xubuntu.org/">Xubuntu</a>.</p>
+		<p>Eine grobe Einschätzung der Beliebtheit und Verbreitung einer Distribution kann man am Ranking auf
+			<a href="http://distrowatch.com/">distrowatch.com</a> erhalten.
+			Die <a href="http://distrowatch.com/search.php">Suchfunktion</a> der Seite bietet außerdem die Möglichkeit gezielt eine Distribution für alte Hardware, Netbooks, Einsteiger, u.a. zu suchen.</p>
+
+		<h2>Dateisystem</h2>
+		<p>Linux lässt sich nur auf einer mit einem kompatiblen
+			<a href="https://de.wikipedia.org/wiki/Dateisystem">Dateisystem</a> formatierten
+			<a href="https://de.wikipedia.org/wiki/Partition_(Datenträger)">Partition</a> installieren.
+			 Bei den meisten Distributionen sorgt der Installationsassistent für die Partitionierung und Formatierung und man muss sich als Nutzer nicht weiter damit auseinandersetzen.
+			 Man sollte jedoch im Hinterkopf behalten dass dies heißt, dass man von Windows aus auf diese Partitionen standardmäßig nicht mehr zugreifen kann.
+			 Andersherum sieht es anders aus: von Linux kann man auch auf Partitionen die für Windows formatiert sind
+			 (<a href="https://de.wikipedia.org/wiki/NTFS">NTFS</a>,
+			 <a href="https://de.wikipedia.org/wiki/File_Allocation_Table">FAT</a>), problemlos zugreifen.
+			 Daher empfiehlt es sich, zum Beispiel externe Festplatten, die man auch unter Windows noch benutzen möchte, also eigentlich alle, nicht mit einem Linux Dateisystem (z.B.
+			 <a href="https://de.wikipedia.org/wiki/Ext3">ext3</a>,
+			 <a href="https://de.wikipedia.org/wiki/Ext4">ext4</a>,
+			 <a href="https://de.wikipedia.org/wiki/Btrfs">Btrfs</a>,
+			 <a href="https://de.wikipedia.org/wiki/XFS_(Dateisystem)">XFS</a>,
+			 <a href="https://de.wikipedia.org/wiki/Reiser_File_System">Reiser4</a>) zu formatieren.
+			 In der Praxis heißt dies meistens einfach, dass man die Festplatte so lässt, wie sie ist.</p>
+
+		<p>Um auf die Daten auf einer Partition zugreifen zu können, muss diese zuerst
+			<a href="https://de.wikipedia.org/wiki/Mounten"><em>gemountet</em></a>,
+			&bdquo;eingehängt&ldquo; werden.
+			Unter Windows wird ihr hierbei ein
+			<a href="https://de.wikipedia.org/wiki/Laufwerk_(Computer)#Laufwerksbuchstaben">Laufwerksbuchstabe</a>,
+			wie zum Beispiel &bdquo;<code>C:\</code>&ldquo; zugewiesen.
+			Unter Linux können Partitionen auf einem beliebigen Pfad eigehängt werden; Es gibt keine Laufwerksbuchstaben, sondern ein
+			<a href="https://de.wikipedia.org/wiki/Stammverzeichnis">Wurzelverzeichnis</a>
+			&bdquo;<code>/</code>&ldquo;, unter dem alles andere erreichbar ist.
+			Die Systempartition wird direkt auf dem Wurzelverzeichnis eingehängt, eine getrennte Partition für Nutzerdaten direkt auf dem Pfad &bdquo;<code>/home</code>&ldquo; und eine externe Festplatte könnte man beispielsweise auf &bdquo;<code>/media/externe</code>&ldquo; einhängen.
+			In den meisten Distributionen werder externe Festplatten, USB-Sticks, usw. automatisch eingehängt ohne dass man sich selbst für einen Ort dafür entscheiden muss.</p>
+
+		<h2>Kommandozeile</h2>
+		<p>Die <em>Kommandozeile</em> ist ein Überbleibsel aus den Zeiten vor grafischen Benutzeroberflächen und die meisten Nutzer müssen nie darauf zurückgreifen.
+			Im Grunde genommen ist die Kommandozeilenumgebung jedoch auch eine komplette Benutzeroberfläche, man kann Dateien und Verzeichnisse erstellen, verschieben, löschen, umbenennen und bearbeiten, laufende Programme und aktuelle Systemauslastung sehen, sogar E-Mails schreiben und Webseiten angucken ist möglich; Dies alles geht aber mit der grafischen Oberfläche benutzerfreundlicher.
+			Nichtsdestotrotz ist es manchmal hilfreich zumindest die Grundlagen der Kommandozeilenumgebung zu kennen.
+			Als erstes steht immer der Name des auszuführenden Programms (alles bis zum ersten Leerzeichen), falls danach noch etwas kommt, wird dies dem Programm als Option gegeben.
+			Mit dem Pipe-Zeichen (&bdquo;|&ldquo;) kann man mehrere Programme &bdquo;zusammenstöpseln&ldquo;, so dass der Output eines Programms als Input für ein anderes verwendet werden kann.
+			Mit dem Größer-Als-Zeichen (&bdquo;&gt;&ldquo;) kann man den Output eines Programms in eine Datei leiten, falls man ihn speichern will.
+			Für Interessierte gibt es im Internet unter
+			<a href="http://www.ernstlx.com/linux90bash1.xhtml">www.ernstlx.com/linux90bash1.xhtml</a>
+			eine gute Einführung, die wichtige Befehle und Konzepte vorstellt und bei
+			<a href="https://encrypted.google.com/search?hl=de&amp;q=linux+kommandozeile+tutorial">Google</a>
+			findet man mehr.
+
+		<h2>Begriffe</h2>
 		<dl>
 			<dt>Linux
 				<a href="https://de.wikipedia.org/wiki/Linux">de.wikipedia.org/wiki/Linux</a>,
 				<a href="https://de.wikipedia.org/wiki/Linux_(Kernel)">de.wikipedia.org/wiki/Linux_(Kernel)</a>,
 				<a href="https://www.kernel.org/">www.kernel.org</a>
-			</dt><dd>Ein Unix-ähnlicher <em>Kernel</em>, bzw. meist die gesamte <em>Distribution</em></dd>
+			</dt><dd>Ein Unix-ähnlicher <em>Kernel</em>, meist ist jedoch die gesamte <em>Distribution</em> gemeint</dd>
 			<dt>Kernel
 				<a href="https://de.wikipedia.org/wiki/Kernel_(Betriebssystem)">de.wikipedia.org/wiki/Kernel_(Betriebssystem)</a>
-			</dt><dd>Der &bdquo;Kern&rdquo; eines <em>Betriebssystems</em>; Die unterste Softwareschicht, welche mithilfe von Treibern direkt mit der Hardware kommuniziert und den restlichen Anwendungen eine standardisierte Schnittstelle bietet</dd>
+			</dt><dd>Der &bdquo;Kern&ldquo; eines <em>Betriebssystems</em>; Die unterste Softwareschicht, welche mithilfe von Treibern direkt mit der Hardware kommuniziert und den restlichen Anwendungen eine standardisierte Schnittstelle bietet</dd>
 			<dt>Distribution
 				<a href="https://de.wikipedia.org/wiki/Linux-Distribution">de.wikipedia.org/wiki/Linux-Distribution</a>,
-				<a href="http://distrowatch.com/">distrowatch.com</a>
-			</dt><dd>Fertiges Gesamtpaket, bestehend aus dem Linux&ndash;Kernel und verschiedenen System&ndash; und Nutzerprogrammen</dd>
+				<a href="http://distrowatch.com/">distrowatch.com</a>,
+				<a href="http://futurist.se/gldt/wp-content/uploads/12.10/gldt1210.svg">(Stammbaum)</a>
+			</dt><dd>Gesamtpaket, bestehend aus dem Linux-Kernel und verschiedenen System&ndash; und Nutzerprogrammen</dd>
 			<dt>Betriebssystem
 				<a href="https://de.wikipedia.org/wiki/Betriebssystem">de.wikipedia.org/wiki/Betriebssystem</a>
 			</dt><dd>Unterste Softwareschicht; Schnittstelle zwischen Hardware und Nutzerprogrammen</dd>
 			<dt>Paketmanager
 				<a href="https://de.wikipedia.org/wiki/Paketverwaltung">de.wikipedia.org/wiki/Paketverwaltung</a>
-			</dt><dd>Systemprogramm um Programme aus den Distributions-<em>Repositories</em> zu installieren und installierte zu Programme aktualisieren</dd>
+			</dt><dd>Systemprogramm um Programme aus den Distributions-<em>Repositories</em> zu installieren und installierte Programme zu aktualisieren</dd>
 			<dt>Repository
 				<a href="https://de.wikipedia.org/wiki/Repository#Software-Repository">de.wikipedia.org/wiki/Repository#Software-Repository</a>
 			</dt><dd>Paketquelle aus der die Paketverwaltung neue Programme und Aktualisierungen herunterlädt</dd>
 			<dt>Shell
 				<a href="https://de.wikipedia.org/wiki/Betriebssystem-Shell">de.wikipedia.org/wiki/Betriebssystem-Shell</a>
-			</dt><dd>Oberfläche des Betriebssystems, die dem Nutzer das Starten von Programmen ermöglicht; Schnittstelle zwischen Anwender und Kernel-Komponenten
+			</dt><dd>Oberfläche des Betriebssystems, die dem Nutzer das Starten von Programmen ermöglicht; Schnittstelle zwischen Anwender und Kernel-Komponenten</dd>
+			<dt>Desktop-Umgebung
+				<a href="https://de.wikipedia.org/wiki/Arbeitsumgebung#Desktop-Umgebung">de.wikipedia.org/wiki/Arbeitsumgebung#Desktop-Umgebung</a>
+			</dt><dd>Sammlung von wichtigen Programmen wie einem Dateimanager, Startmenü, Taskleiste, Systemtray u.ä.<dd>
 		</dl>
-		<!--h2>Software &amp; Pakete</h2>
-		<p>In Linux&ndash;Distributionen läuft Softwareverwaltung, also Installation und Deinstallation, sowie das Updaten installierter Programme (einschließlich Betriebssystemkomponenten wie zum Beispiel dem Kernel selber), über den <em>Paketmanager</em>.</p-->
 	</article><footer>
-		&copy; Galdor Takacs <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.de">CC-BY-SA</a> <time>2015-04-20</time>
-		<a href="http://validator.w3.org/unicorn/check?ucn_uri=ght.github.io%2Fvhs-linux.html&amp;ucn_task=conformance">Valid HTML5&amp;CSS3</a>
+		&copy; Galdor Takacs <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.de">CC-BY-SA</a> <time>2015-04-26</time>
+		<a href="http://validator.w3.org/unicorn/check?ucn_uri=ght.github.io%2Fvhs-linux.html&amp;ucn_task=conformance">Valid HTML5 &amp; CSS3</a>
 	</footer>
 </body></html>
